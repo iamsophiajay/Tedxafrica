@@ -1,0 +1,25 @@
+{
+  "name": "project-tedxafrica-2026",
+  "version": "1.0.0",
+  "description": "Official website for Project TEDxAfrica 2026 — Positioning Global Voices for Continental Impact",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "keywords": ["tedx", "africa", "leadership", "conference"],
+  "author": "Project TEDxAfrica",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

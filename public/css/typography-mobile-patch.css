@@ -1,0 +1,407 @@
+/* =========================================================
+   PROJECT TEDXAFRICA 2026 — TYPOGRAPHY & MOBILE PATCH
+   Apply this AFTER main.css via <link> or @import
+   ========================================================= */
+
+/* ─── HEADING SIZE UPGRADES (DESKTOP) ────────────────────── */
+
+/* h2-level: display-md — was clamp(2.2rem, 4vw, 4rem) → now larger + bold */
+.display-md {
+  font-size: clamp(3rem, 5.5vw, 6rem);
+  font-weight: 700;
+  line-height: 1.0;
+}
+
+/* h2-level: display-lg — was clamp(2.5rem, 5vw, 5.5rem) → significantly larger */
+.display-lg {
+  font-size: clamp(3.5rem, 6.5vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.97;
+  letter-spacing: -0.02em;
+}
+
+/* h3-level: heading-lg — was clamp(1.8rem, 2.5vw, 3rem) → doubled, bold */
+.heading-lg {
+  font-size: clamp(2.8rem, 4vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+/* heading-md — was clamp(1.4rem, 2vw, 2.2rem) → boosted */
+.heading-md {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Pillar headings (the 01/02/03 section h3s) */
+.section--dark .heading-lg {
+  font-size: clamp(2.5rem, 3.5vw, 5rem);
+  font-weight: 700;
+}
+
+/* Speaker / team card names — slightly bolder */
+.speaker-card__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.team-card__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.coach-card__name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Quote block — richer */
+.quote-block__text {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 500;
+}
+
+/* CTA band title */
+.cta-band__title {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 700;
+}
+
+/* Footer brand mark */
+.footer__brand-mark {
+  font-size: 1.8rem;
+}
+
+/* Tier card names */
+.tier-name {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+/* Timeline titles */
+.timeline-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* ─── MOBILE FIXES (max-width: 768px) ────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── Global container ── */
+  .container { padding: 0 20px; }
+
+  /* ── Heading scale-down for mobile (prevent overflow) ── */
+  .display-xl {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    letter-spacing: -0.02em;
+  }
+  .display-lg {
+    font-size: clamp(2.4rem, 9vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+  .display-md {
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 700;
+  }
+  .heading-lg {
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
+    font-weight: 700;
+  }
+  .heading-md {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    font-weight: 700;
+  }
+  .section--dark .heading-lg {
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+    font-weight: 700;
+  }
+  .cta-band__title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .quote-block__text {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100svh;
+    padding-bottom: 52px;
+    align-items: flex-end;
+  }
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 0 20px;
+  }
+  .hero__title {
+    font-size: clamp(2.2rem, 9.5vw, 3.4rem);
+    margin-bottom: 16px;
+    line-height: 0.97;
+  }
+  .hero__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+  .hero__right {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    align-items: flex-start;
+  }
+  .hero__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    align-items: flex-start;
+  }
+  .hero__stat-num { font-size: 2.2rem; }
+
+  /* ── BUTTON FIXES (mobile) ── */
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 24px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    font-size: 0.72rem;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-band__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+  .cta-band__actions .btn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Section header ── */
+  .section-header { margin-bottom: 36px; }
+  .section-header--center { text-align: left; }
+  .section-eyebrow--center { justify-content: flex-start; }
+
+  /* ── Grids → single column ── */
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-auto {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* ── Inline style grids (override) ── */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.2fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  /* ── Pillar blocks (the 01/02/03 section) ── */
+  .section--dark [style*="gap:1px"],
+  .section--dark [style*="gap: 1px"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    background: rgba(255,255,255,0.08) !important;
+  }
+  .section--dark [style*="padding:64px 48px"],
+  .section--dark [style*="padding: 64px 48px"] {
+    padding: 40px 24px !important;
+  }
+
+  /* ── Stat row ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat-item {
+    padding: 28px 16px;
+    border-bottom: 1px solid var(--grey-200);
+    border-right: none !important;
+  }
+  .stat-item:nth-child(odd) {
+    border-right: 1px solid var(--grey-200) !important;
+  }
+  .stat-number { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+
+  /* ── Feature block ── */
+  .feature-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .feature-block__img {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .feature-block__content {
+    padding: 36px 20px;
+  }
+  .feature-block--reverse .feature-block__img { order: 0; }
+  .feature-block--reverse .feature-block__content { order: 1; }
+
+  /* ── Quote block ── */
+  .quote-block { padding: 36px 20px; }
+
+  /* ── CTA band ── */
+  .cta-band { padding: 56px 0; }
+  .cta-band__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  /* ── Forms ── */
+  .form-grid { grid-template-columns: 1fr; }
+  .form-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  /* ── Cards ── */
+  .card { padding: 24px 20px; }
+  .investment-block { padding: 36px 20px; }
+  .investment-amount { font-size: clamp(2.8rem, 14vw, 4.5rem); }
+  .tier-header, .tier-body { padding: 24px 20px; }
+  .tier-name { font-size: 2rem; }
+
+  /* ── Timeline ── */
+  .timeline { padding-left: 28px; }
+  .timeline::before { left: 8px; }
+  .timeline-dot { left: -32px; }
+  .timeline-title { font-size: 1.4rem; }
+
+  /* ── Footer ── */
+  .footer__top {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* ── Nav ── */
+  .nav__inner { padding: 0 20px; }
+  .nav__links, .nav__cta { display: none; }
+  .nav__hamburger { display: flex; }
+  .nav__mobile { padding: 36px 20px; }
+  .nav__mobile .nav__link {
+    font-size: 1.05rem;
+    padding: 8px 0;
+  }
+
+  /* ── Page hero (inner pages) ── */
+  .page-hero {
+    padding-top: calc(var(--nav-h) + 48px);
+    padding-bottom: 48px;
+  }
+
+  /* ── Overflow safety ── */
+  body { overflow-x: hidden; }
+  * { max-width: 100%; box-sizing: border-box; }
+  img { max-width: 100%; height: auto; }
+}
+
+/* ─── TABLET FIXES (768px – 1024px) ──────────────────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root { --section-v: 80px; }
+  .container { padding: 0 32px; }
+
+  .display-lg { font-size: clamp(2.8rem, 5.5vw, 5rem); }
+  .display-md { font-size: clamp(2.4rem, 4.5vw, 4rem); }
+  .heading-lg { font-size: clamp(2.2rem, 3.5vw, 4rem); }
+
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+  .feature-block { grid-template-columns: 1fr; }
+  .feature-block__img { height: 380px; }
+  .feature-block__content { padding: 56px 40px; }
+
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 40px; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-bottom: 1px solid var(--grey-200); }
+
+  .cta-band__inner { grid-template-columns: 1fr; gap: 28px; }
+  .cta-band__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+/* ─── SMALL MOBILE (max-width: 480px) ────────────────────── */
+@media (max-width: 480px) {
+  :root { --section-v: 44px; }
+  .container { padding: 0 16px; }
+
+  .display-lg { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .display-md { font-size: clamp(1.8rem, 9vw, 2.6rem); }
+  .heading-lg { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+
+  .hero__title { font-size: clamp(1.9rem, 10.5vw, 2.8rem); }
+  .hero__subtitle { font-size: 0.88rem; }
+  .hero__stat-num { font-size: 2rem; }
+
+  .stat-row { grid-template-columns: 1fr; }
+  .stat-item { border-right: none !important; }
+  .stat-number { font-size: clamp(2rem, 9vw, 3rem); }
+
+  .investment-amount { font-size: clamp(2.5rem, 15vw, 4rem); }
+  .quote-block__text { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
+  .cta-band__title { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+
+  .btn { font-size: 0.7rem; padding: 14px 18px; }
+  .section-header { margin-bottom: 28px; }
+  .card { padding: 20px 16px; }
+  .coach-card__body, .media-card__body { padding: 18px 16px; }
+  .team-card__img { width: 64px; height: 64px; }
+
+  .hero__event-date,
+.hero__stat-num,
+.hero__meta,
+.hero__stat-label {
+  color: #ffffff !important;
+}
+}
