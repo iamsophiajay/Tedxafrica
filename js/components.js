@@ -100,11 +100,24 @@
 </footer>
 `;
 
-  /* ─── INJECT ──────────────────────────────────────────────── */
+/* ─── INJECT ──────────────────────────────────────────────── */
   const navTarget = document.getElementById('nav-placeholder');
   const footerTarget = document.getElementById('footer-placeholder');
 
   if (navTarget) navTarget.outerHTML = navHTML;
   if (footerTarget) footerTarget.outerHTML = footerHTML;
+
+  /* ─── WHATSAPP FLOATING BUTTON ──────────────────────────── */
+  const whatsappHTML = `
+<a href="https://chat.whatsapp.com/JROyfnqgL8RB6wfFu1B1yo?mode=gi_t"
+   target="_blank" rel="noopener"
+   class="whatsapp-float">
+  <svg viewBox="0 0 32 32" class="whatsapp-float__icon" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.699 4.61 1.902 6.482L4 29l7.72-1.868A11.93 11.93 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.362l-.357-.213-4.583 1.109 1.127-4.47-.233-.367A9.78 9.78 0 0 1 6.182 15c0-5.412 4.407-9.818 9.819-9.818S25.818 9.588 25.818 15 21.413 24.818 16.001 24.818zm5.383-7.34c-.294-.148-1.741-.859-2.011-.957-.27-.098-.467-.148-.663.148-.196.294-.762.957-.934 1.153-.172.196-.343.221-.637.074-.294-.148-1.241-.457-2.364-1.459-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.13-.6.134-.133.294-.343.441-.515.147-.172.196-.294.294-.49.098-.196.049-.368-.025-.515-.074-.148-.663-1.598-.908-2.188-.239-.574-.483-.497-.663-.506l-.564-.01c-.196 0-.515.074-.784.368-.27.294-1.03 1.007-1.03 2.456s1.054 2.848 1.201 3.044c.147.196 2.075 3.168 5.028 4.442.703.303 1.251.484 1.679.62.706.225 1.348.193 1.856.117.566-.084 1.741-.712 1.987-1.4.245-.688.245-1.278.172-1.4-.074-.123-.27-.196-.564-.344z"/>
+  </svg>
+  <span class="whatsapp-float__text">Join the Official WhatsApp Community</span>
+</a>
+`;
+  document.body.insertAdjacentHTML('beforeend', whatsappHTML);
 
 })();
