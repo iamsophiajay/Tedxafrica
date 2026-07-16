@@ -16,7 +16,10 @@
       <a href="speakers.html" class="nav__link">Speakers</a>
       <a href="experience.html" class="nav__link">Experience</a>
       <a href="coaches.html" class="nav__link">Faculty of Coaches</a>
+      <a href="legacy-talks.html" class="nav__link">Legacy Talks</a>
+      <a href="ambassadors.html" class="nav__link">Global Ambassadors</a>
       <a href="team.html" class="nav__link">Team</a>
+      <a href="blog.html" class="nav__link">Blog</a>
       <span class="nav__link nav__link--disabled" aria-disabled="true">Media</span>
       <a href="contact.html" class="nav__link">Contact</a>
     </div>
@@ -32,7 +35,10 @@
   <a href="speakers.html" class="nav__link">Speakers</a>
   <a href="experience.html" class="nav__link">Experience</a>
   <a href="coaches.html" class="nav__link">Faculty of Coaches</a>
-  <span class="nav__link nav__link--disabled" aria-disabled="true">Ambassadors</span>
+  <a href="legacy-talks.html" class="nav__link">Legacy Talks</a>
+  <a href="ambassadors.html" class="nav__link">Global Ambassadors</a>
+  <a href="team.html" class="nav__link">Team</a>
+  <a href="blog.html" class="nav__link">Blog</a>
   <span class="nav__link nav__link--disabled" aria-disabled="true">Media</span>
   <a href="contact.html" class="nav__link">Contact</a>
   <a href="contact.html#apply" class="btn btn--primary" style="margin-top:8px;">Apply to Speak</a>
@@ -57,6 +63,9 @@
           <a href="speakers.html" class="footer__link">Speaker Experience</a>
           <a href="experience.html" class="footer__link">The Journey</a>
           <a href="coaches.html" class="footer__link">Faculty of Coaches</a>
+          <a href="legacy-talks.html" class="footer__link">Legacy Talks</a>
+          <a href="ambassadors.html" class="footer__link">Global Ambassadors</a>
+          <a href="blog.html" class="footer__link">Blog</a>
         </nav>
       </div>
       <div>
@@ -106,6 +115,63 @@
 
   if (navTarget) navTarget.outerHTML = navHTML;
   if (footerTarget) footerTarget.outerHTML = footerHTML;
+
+  /* ─── AUTO-COLORIZE "TEDxAfrica" WHEREVER IT APPEARS ────────
+     Splits any occurrence of TEDxAfrica (in any casing) so the
+     "TEDx" part renders in brand red and "Africa" stays the
+     surrounding text color — matching the logo styling — without
+     needing to manually wrap every heading/title across the site. */
+  function colorizeBrandName() {
+    const regex = /(TEDx|Tedx)(Africa|africa)/g;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !regex.test(node.nodeValue)) return NodeFilter.FILTER_SKIP;
+        regex.lastIndex = 0;
+        const parent = node.parentNode;
+        if (!parent) return NodeFilter.FILTER_SKIP;
+        const tag = parent.tagName;
+        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'TITLE') return NodeFilter.FILTER_SKIP;
+        if (parent.closest && parent.closest('.tedx-brand')) return NodeFilter.FILTER_SKIP;
+        // Skip red-background contexts (buttons, CTAs, featured pricing header) —
+        // red text on red background would be unreadable.
+        if (parent.closest && parent.closest('.btn--primary, .nav__cta, .tier-card--featured .tier-header')) {
+          return NodeFilter.FILTER_SKIP;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    const nodes = [];
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+
+    nodes.forEach(node => {
+      const text = node.nodeValue;
+      const frag = document.createDocumentFragment();
+      let lastIndex = 0;
+      let match;
+      regex.lastIndex = 0;
+      while ((match = regex.exec(text))) {
+        if (match.index > lastIndex) {
+          frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+        }
+        const wrap = document.createElement('span');
+        wrap.className = 'tedx-brand';
+        const redPart = document.createElement('span');
+        redPart.style.color = 'var(--red)';
+        redPart.textContent = match[1];
+        wrap.appendChild(redPart);
+        wrap.appendChild(document.createTextNode(match[2]));
+        frag.appendChild(wrap);
+        lastIndex = match.index + match[0].length;
+      }
+      if (lastIndex < text.length) {
+        frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+      }
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+  colorizeBrandName();
 
   /* ─── WHATSAPP FLOATING BUTTON ──────────────────────────── */
   const whatsappHTML = `
