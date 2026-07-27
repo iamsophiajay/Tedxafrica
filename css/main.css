@@ -2,7 +2,7 @@
    PROJECT TEDXAFRICA 2026 — GLOBAL STYLESHEET
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ─── CSS VARIABLES ─────────────────────────────────────── */
 :root {
@@ -17,8 +17,8 @@
   --grey-600:   #5A5855;
   --grey-800:   #2C2B29;
 
-  --font-display: 'Poppins', Georgia, serif;
-  --font-body:    'Poppins', system-ui, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
 
   --nav-h:      80px;
   --max-w:      1280px;
@@ -27,7 +27,6 @@
   --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 
 /* ─── RESET ──────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -74,19 +73,19 @@ input, textarea, select {
 .heading-lg {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2vw, 2.25rem);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.2;
 }
 .heading-md {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 1.5vw, 1.5rem);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.3;
 }
 .label {
   font-family: var(--font-body);
   font-size: 0.7rem;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -125,11 +124,10 @@ input, textarea, select {
   width: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
 }
 .nav__logo {
   display: flex;
@@ -137,10 +135,9 @@ input, textarea, select {
   align-items: center;
   color: var(--nav-text, var(--black));
   transition: color 0.3s;
-  flex-shrink: 0;
 }
 .nav__logo-img {
-  height: 30px;
+  height: 34px;
   width: auto;
   object-fit: contain;
   flex-shrink: 0;
@@ -174,34 +171,28 @@ input, textarea, select {
 .nav__links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+  gap: 36px;
 }
 .nav__link {
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--nav-text, var(--black));
   transition: color 0.2s, opacity 0.2s;
   opacity: 0.75;
-  white-space: nowrap;
 }
 .nav__link:hover { opacity: 1; }
 .nav__link.active { opacity: 1; color: var(--red); }
 .nav__cta {
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 10px 18px;
+  padding: 11px 24px;
   background: var(--red);
   color: var(--white);
   transition: background 0.2s, transform 0.2s;
-  flex-shrink: 0;
-  white-space: nowrap;
 }
 .nav__cta:hover { background: var(--red-dark); transform: translateY(-1px); }
 
@@ -243,25 +234,15 @@ input, textarea, select {
   letter-spacing: 0.08em;
 }
 
-/* Tighten further just below full desktop, before the hamburger takes over at 768px */
-@media (max-width: 1180px) {
-  .nav__links { gap: 11px; }
-  .nav__link { font-size: 0.6rem; letter-spacing: 0.02em; }
-  .nav__cta { padding: 9px 14px; font-size: 0.58rem; }
-  .nav__logo-img { height: 26px; }
-}
-
 /* ─── HERO HOMEPAGE ──────────────────────────────────────── */
 .hero {
   position: relative;
   height: 100vh;
   min-height: 700px;
   display: flex;
-  align-items: center;
-  padding-top: calc(var(--nav-h) + 40px);
+  align-items: flex-end;
   padding-bottom: 80px;
   overflow: hidden;
-  box-sizing: border-box;
 }
 .hero__bg {
   position: absolute;
@@ -339,7 +320,7 @@ input, textarea, select {
   color: var(--white);
   font-family: var(--font-display);
   font-size: clamp(3rem, 4vw, 4.5rem);
-  font-weight: 200;
+  font-weight: 400;
   line-height: 0.93;
   letter-spacing: -0.025em;
   margin-bottom: 32px;
@@ -385,7 +366,7 @@ input, textarea, select {
 .hero__event-date {
   color: var(--white);
   font-family: var(--font-display);
-  font-size: clamp(1.0rem, 2vw, 1rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 8px;
@@ -406,7 +387,7 @@ input, textarea, select {
 }
 .hero__stat-num {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 400;
   color: var(--white);
   line-height: 1;
@@ -831,12 +812,18 @@ input, textarea, select {
   border-top: 1px solid var(--grey-200);
   padding-top: 32px;
 }
+.team-card__img-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
 .team-card__img {
-  width: 80px;
-  height: 80px;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
   object-fit: cover;
   filter: grayscale(100%);
-  margin-bottom: 20px;
   transition: filter 0.4s;
 }
 .team-card:hover .team-card__img { filter: grayscale(0%); }
@@ -873,6 +860,232 @@ input, textarea, select {
   transition: color 0.2s;
 }
 .team-card__linkedin:hover { color: var(--black); }
+
+/* ─── LEGACY TALK CARD ───────────────────────────────────── */
+.talk-card {
+  border: 1px solid var(--grey-200);
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s var(--ease-smooth);
+  display: flex;
+  flex-direction: column;
+}
+.talk-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+.talk-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--black);
+  overflow: hidden;
+}
+.talk-card__media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.talk-card__body {
+  padding: 28px 32px 32px;
+  border-top: 1px solid var(--grey-200);
+  display: flex;
+  gap: 20px;
+}
+.talk-card__headshot {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(20%);
+}
+.talk-card__meta {
+  min-width: 0;
+}
+.talk-card__talk-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.talk-card__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+.talk-card__title {
+  font-size: 0.78rem;
+  color: var(--grey-500);
+  margin-bottom: 10px;
+}
+.talk-card__bio {
+  font-size: 0.85rem;
+  color: var(--grey-600);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.talk-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey-400);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.talk-card__tags span { color: var(--red); }
+.talk-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey-400);
+  transition: color 0.2s;
+}
+.talk-card__link:hover { color: var(--black); }
+
+/* ─── AMBASSADOR CARD ────────────────────────────────────── */
+.ambassador-card {
+  border: 1px solid var(--grey-200);
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s var(--ease-smooth);
+}
+.ambassador-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+.ambassador-card__img-wrap {
+  width: 100%;
+  padding: 32px 0 0;
+  display: flex;
+  justify-content: center;
+  background: var(--off-white);
+}
+.ambassador-card__img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: filter 0.4s;
+}
+.ambassador-card:hover .ambassador-card__img { filter: grayscale(0%); }
+.ambassador-card__body {
+  padding: 24px 30px 30px;
+  border-top: 1px solid var(--grey-200);
+  text-align: center;
+}
+.ambassador-card__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.ambassador-card__role {
+  font-size: 0.8rem;
+  color: var(--grey-600);
+  margin-bottom: 2px;
+}
+.ambassador-card__region {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+.ambassador-card__bio {
+  font-size: 0.85rem;
+  color: var(--grey-600);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.ambassador-card__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey-400);
+  transition: color 0.2s;
+}
+.ambassador-card__linkedin:hover { color: var(--black); }
+.ambassador-card--placeholder .ambassador-card__img {
+  background: var(--grey-200);
+  filter: none;
+}
+.ambassador-card--placeholder .ambassador-card__placeholder-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--grey-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-400);
+}
+
+/* ─── BLOG CARD ──────────────────────────────────────────── */
+.blog-card {
+  border: 1px solid var(--grey-200);
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s var(--ease-smooth);
+}
+.blog-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+.blog-card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(30%);
+  transition: filter 0.4s;
+}
+.blog-card:hover .blog-card__img { filter: grayscale(0%); }
+.blog-card__body {
+  padding: 28px 32px;
+}
+.blog-card__category {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 8px;
+}
+.blog-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.blog-card__excerpt {
+  font-size: 0.88rem;
+  color: var(--grey-600);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.blog-card__meta {
+  font-size: 0.75rem;
+  color: var(--grey-400);
+  font-weight: 400;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
 /* ─── STAT BAR ───────────────────────────────────────────── */
 .stat-row {
@@ -1213,9 +1426,17 @@ input, textarea, select {
   box-shadow: 0 16px 48px rgba(0,0,0,0.1);
   transform: translateY(-4px);
 }
-.coach-card__img {
+.coach-card__img-wrap {
   width: 100%;
-  aspect-ratio: 1/1;
+  padding: 28px 0 0;
+  display: flex;
+  justify-content: center;
+  background: var(--off-white);
+}
+.coach-card__img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   object-fit: cover;
   filter: grayscale(20%);
   transition: filter 0.4s, transform 0.6s var(--ease-smooth);
