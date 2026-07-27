@@ -17,7 +17,6 @@
       <a href="experience.html" class="nav__link">Experience</a>
       <a href="coaches.html" class="nav__link">Faculty of Coaches</a>
       <a href="legacy-talks.html" class="nav__link">Legacy Talks</a>
-      <a href="ambassadors.html" class="nav__link">Global Ambassadors</a>
       <a href="team.html" class="nav__link">Team</a>
       <a href="blog.html" class="nav__link">Blog</a>
       <span class="nav__link nav__link--disabled" aria-disabled="true">Media</span>
@@ -36,7 +35,6 @@
   <a href="experience.html" class="nav__link">Experience</a>
   <a href="coaches.html" class="nav__link">Faculty of Coaches</a>
   <a href="legacy-talks.html" class="nav__link">Legacy Talks</a>
-  <a href="ambassadors.html" class="nav__link">Global Ambassadors</a>
   <a href="team.html" class="nav__link">Team</a>
   <a href="blog.html" class="nav__link">Blog</a>
   <span class="nav__link nav__link--disabled" aria-disabled="true">Media</span>
@@ -64,7 +62,6 @@
           <a href="experience.html" class="footer__link">The Journey</a>
           <a href="coaches.html" class="footer__link">Faculty of Coaches</a>
           <a href="legacy-talks.html" class="footer__link">Legacy Talks</a>
-          <a href="ambassadors.html" class="footer__link">Global Ambassadors</a>
           <a href="blog.html" class="footer__link">Blog</a>
         </nav>
       </div>
@@ -81,19 +78,15 @@
         <div class="footer__col-title">Contact</div>
         <div class="footer__contact-item">
           <strong>General</strong>
-          info@projecttedxafrica.com
+          info@projecttedxafrica.org
         </div>
         <div class="footer__contact-item">
           <strong>Speakers</strong>
-          speakers@projecttedxafrica.com
+          speakers@projecttedxafrica.org
         </div>
         <div class="footer__contact-item">
           <strong>Partnerships</strong>
-          partnerships@projecttedxafrica.com
-        </div>
-        <div class="footer__contact-item">
-          <strong>Media</strong>
-          media@projecttedxafrica.com
+          partnerships@projecttedxafrica.org
         </div>
       </div>
     </div>
