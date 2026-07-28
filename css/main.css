@@ -832,8 +832,8 @@ input, textarea, select {
   padding-top: 32px;
 }
 .team-card__img {
-  width: 125px;
-  height: 125px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   filter: grayscale(100%);
   margin-bottom: 20px;
