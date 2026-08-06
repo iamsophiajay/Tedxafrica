@@ -78,7 +78,7 @@
         <div class="footer__col-title">Contact</div>
         <div class="footer__contact-item">
           <strong>General</strong>
-          info@projecttedxafrica.org
+          admin@projecttedxafrica.org
         </div>
         <div class="footer__contact-item">
           <strong>Speakers</strong>
