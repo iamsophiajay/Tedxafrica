@@ -373,7 +373,7 @@ input, textarea, select {
   flex-wrap: wrap;
 }
 .hero__disclaimer {
-  color: rgba(255,255,255,0.45);
+  color: rgba(255, 255, 255, 0.7);
   max-width: 480px;
   margin-top: 16px;
   line-height: 1.5;
