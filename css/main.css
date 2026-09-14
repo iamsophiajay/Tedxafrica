@@ -374,6 +374,7 @@ input, textarea, select {
 }
 .hero__disclaimer {
   color: rgba(255, 255, 255, 0.7);
+  font-size: 0.72rem;
   max-width: 480px;
   margin-top: 16px;
   line-height: 1.5;
