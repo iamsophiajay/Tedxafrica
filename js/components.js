@@ -11,18 +11,20 @@
     <a href="index.html" class="nav__logo">
       <img src="img/logo/logo-nav-wordmark.png" alt="Project TEDxAfrica" class="nav__logo-img">
     </a>
-    <div class="nav__links">
+   <div class="nav__links">
+      <a href="index.html" class="nav__link">Home</a>
       <a href="about.html" class="nav__link">About</a>
+      <a href="experience.html" class="nav__link">2026 Experience</a>
       <a href="speakers.html" class="nav__link">Speakers</a>
-      <a href="experience.html" class="nav__link">Experience</a>
-      <a href="coaches.html" class="nav__link">Faculty of Coaches</a>
-      <a href="legacy-talks.html" class="nav__link">Legacy Talks</a>
+      <a href="coaches.html" class="nav__link">Speaker Development</a>
       <a href="team.html" class="nav__link">Team</a>
-      <a href="blog.html" class="nav__link">Blog</a>
-      <span class="nav__link nav__link--disabled" aria-disabled="true">Media</span>
+      <a href="contact.html#partner" class="nav__link">Partners</a>
       <a href="contact.html" class="nav__link">Contact</a>
     </div>
-    <a href="contact.html#apply" class="nav__cta">Apply to Speak</a>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="contact.html#partner" class="nav__cta--outline">Partner With Us</a>
+      <a href="contact.html#attend" class="nav__cta">Attend 2026</a>
+    </div>
     <button class="nav__hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
@@ -31,15 +33,14 @@
 <div class="nav__mobile">
   <a href="index.html" class="nav__link">Home</a>
   <a href="about.html" class="nav__link">About</a>
+  <a href="experience.html" class="nav__link">2026 Experience</a>
   <a href="speakers.html" class="nav__link">Speakers</a>
-  <a href="experience.html" class="nav__link">Experience</a>
-  <a href="coaches.html" class="nav__link">Faculty of Coaches</a>
-  <a href="legacy-talks.html" class="nav__link">Legacy Talks</a>
+  <a href="coaches.html" class="nav__link">Speaker Development</a>
   <a href="team.html" class="nav__link">Team</a>
-  <a href="blog.html" class="nav__link">Blog</a>
-  <span class="nav__link nav__link--disabled" aria-disabled="true">Media</span>
+  <a href="contact.html#partner" class="nav__link">Partners</a>
   <a href="contact.html" class="nav__link">Contact</a>
-  <a href="contact.html#apply" class="btn btn--primary" style="margin-top:8px;">Apply to Speak</a>
+  <a href="contact.html#attend" class="btn btn--primary" style="margin-top:8px;">Attend 2026</a>
+  <a href="contact.html#partner" class="btn btn--outline-dark">Partner With Us</a>
 </div>
 `;
 
@@ -68,7 +69,6 @@
       <div>
         <div class="footer__col-title">Get Involved</div>
         <nav class="footer__links">
-          <a href="contact.html#apply" class="footer__link">Apply to Speak</a>
           <a href="contact.html#partner" class="footer__link">Partner With Us</a>
           <a href="contact.html#attend" class="footer__link">Attend the Event</a>
           <a href="contact.html#volunteer" class="footer__link">Volunteer</a>
