@@ -204,7 +204,23 @@ input, textarea, select {
   white-space: nowrap;
 }
 .nav__cta:hover { background: var(--red-dark); transform: translateY(-1px); }
-
+.nav__cta--outline {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 17px;
+  border: 1px solid rgba(0,0,0,0.3);
+  color: var(--nav-text, var(--black));
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.nav__cta--outline:hover {
+  border-color: var(--black);
+  background: rgba(0,0,0,0.04);
+}
 .nav__hamburger {
   display: none;
   flex-direction: column;
