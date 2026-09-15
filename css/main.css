@@ -1353,11 +1353,12 @@ input, textarea, select {
     padding-bottom: 48px;
   }
   .hero__left { display: contents; }
-  .hero__eyebrow  { order: 1; }
-  .hero__title    { order: 2; }
-  .hero__subtitle { order: 3; }
-  .hero__right    { order: 4; }
-  .hero__actions  { order: 5; margin-top: 8px; }
+  .hero__eyebrow     { order: 1; }
+  .hero__title       { order: 2; }
+  .hero__subtitle    { order: 3; }
+  .hero__right       { order: 4; }
+  .hero__actions     { order: 5; margin-top: 8px; }
+  .hero__disclaimer  { order: 6; }
 }
 
 /* ─── DISABLED NAV LINKS (Ambassadors, Media — not yet live) ── */
