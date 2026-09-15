@@ -91,7 +91,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <span class="footer__copy">&copy; 2026 Project TEDxAfrica. All rights reserved. TEDx is an independently organized event.</span>
+      <span class="footer__copy">&copy; Project TEDxAfrica is an independent curation and legacy initiative. It is not TED and is not itself a licensed TEDx event. For the 2026 edition, Project TEDxAfrica is collaborating with TEDxKubwa, an independently organised TEDx event operating under its TEDx licence.</span>
       <div class="footer__legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
