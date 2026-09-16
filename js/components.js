@@ -23,7 +23,7 @@
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
       <a href="https://chat.whatsapp.com/DbiaqJ25cKS3Krirdg1H8L?s=cl&p=a&mlu=4&ilr=4" class="nav__cta--outline">2027 Waitlist</a>
-      <a href="https://selar.com/projecttedxafrica2026tickets" class="nav__cta">Attend 2026</a>
+      <a href="https://selar.com/projecttedxafrica2026tickets" class="nav__cta">Attend 2026 Confrence</a>
     </div>
     <button class="nav__hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
@@ -39,7 +39,7 @@
   <a href="team.html" class="nav__link">Team</a>
   <a href="blog.html" class="nav__link">Blog</a>
   <a href="contact.html" class="nav__link">Contact</a>
-  <a href="https://selar.com/projecttedxafrica2026tickets" class="btn btn--primary" style="margin-top:8px;">Attend 2026</a>
+  <a href="https://selar.com/projecttedxafrica2026tickets" class="btn btn--primary" style="margin-top:8px;">Attend 2026 Confrence</a>
   <a href="https://chat.whatsapp.com/DbiaqJ25cKS3Krirdg1H8L?s=cl&p=a&mlu=4&ilr=4" class="btn btn--outline-dark">2027 Waitlist</a>
 </div>
 `;
