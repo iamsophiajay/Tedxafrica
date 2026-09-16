@@ -1295,7 +1295,7 @@ input, textarea, select {
 @media (max-width: 768px) {
   :root { --section-v: 64px; --nav-h: 68px; }
   .container { padding: 0 24px; }
-  .nav__links, .nav__cta { display: none; }
+  .nav__links, .nav__cta--outline { display: none; }
   .nav__hamburger { display: flex; }
   .hero__content { grid-template-columns: 1fr; gap: 48px; }
   .hero__right { text-align: left; }
@@ -1376,7 +1376,39 @@ input, textarea, select {
   .hero__actions     { order: 5; margin-top: 8px; }
   .hero__disclaimer  { order: 6; }
 }
+@media (max-width: 768px) {
+  .hero__content {
+    gap: 20px;
+  }
 
+  .hero__subtitle {
+    margin-bottom: 20px;
+  }
+
+  .hero__right {
+    margin-bottom: 4px;
+  }
+
+  .hero__meta {
+    margin-bottom: 6px;
+  }
+
+  .hero__meta[style*="margin-top:24px"] {
+    margin-top: 14px !important;
+  }
+
+  .hero__event-date {
+    margin-bottom: 4px;
+  }
+
+  .hero__event-location {
+    margin-bottom: 12px !important;
+  }
+
+  .hero__actions {
+    margin-top: 4px !important;
+  }
+}
 /* ─── DISABLED NAV LINKS (Ambassadors, Media — not yet live) ── */
 .nav__link--disabled {
   cursor: default;
