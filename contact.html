@@ -119,6 +119,7 @@
         <button class="tab-btn" data-tab-btn="attend">Attend the Event</button>
         <button class="tab-btn" data-tab-btn="partner">Partner Enquiry</button>
         <button class="tab-btn" data-tab-btn="volunteer">Volunteer</button>
+        <button class="tab-btn" data-tab-btn="coaches">Apply to be a Coach</button>
       </div>
 
       <!-- TAB: APPLY -->
@@ -403,6 +404,212 @@
           </div>
         </div>
       </div>
+
+      <!-- TAB: COACHES -->
+<div class="tab-panel" data-tab-panel="coaches">
+  <div class="form-wrapper">
+    <div class="form-info">
+      <div class="form-info__title">Apply to be a TEDx Licensed Coach</div>
+
+      <p class="form-info__desc">
+        Project TEDxAfrica is building a network of qualified coaches to support speakers and participants through the TEDx preparation and curation process.
+      </p>
+
+      <p class="form-info__desc">
+        Coaches should have strong communication skills, relevant professional or speaking experience, and an ability to help individuals develop and communicate ideas clearly.
+      </p>
+
+      <div class="form-info__contact-block">
+        <div class="form-info__email-label">Coach Enquiries</div>
+        <div class="form-info__email">
+          <a href="mailto:admin@projecttedxafrica.org">admin@projecttedxafrica.org</a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form class="contact-form" data-endpoint="/api/coaches">
+        <div style="display:flex;flex-direction:column;gap:20px;">
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">
+                First Name <span style="color:var(--red);">*</span>
+              </label>
+              <input type="text" name="first_name" class="form-input" required>
+              <span class="form-error-msg">Required.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Last Name <span style="color:var(--red);">*</span>
+              </label>
+              <input type="text" name="last_name" class="form-input" required>
+              <span class="form-error-msg">Required.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Email Address <span style="color:var(--red);">*</span>
+            </label>
+            <input type="email" name="email" class="form-input" required>
+            <span class="form-error-msg">Please enter a valid email.</span>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" name="phone" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                Country of Residence <span style="color:var(--red);">*</span>
+              </label>
+              <input type="text" name="country" class="form-input" required>
+              <span class="form-error-msg">Required.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Current Profession / Title <span style="color:var(--red);">*</span>
+            </label>
+            <input type="text" name="profession" class="form-input" required>
+            <span class="form-error-msg">Required.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Organisation / Affiliation
+            </label>
+            <input type="text" name="organisation" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Professional Background <span style="color:var(--red);">*</span>
+            </label>
+            <textarea
+              name="background"
+              class="form-textarea"
+              placeholder="Briefly describe your professional background, relevant experience, and areas of expertise."
+              required
+            ></textarea>
+            <span class="form-error-msg">Required.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Coaching / Mentoring Experience <span style="color:var(--red);">*</span>
+            </label>
+            <textarea
+              name="coaching_experience"
+              class="form-textarea"
+              placeholder="Tell us about any coaching, mentoring, speaker development, training, facilitation, or related experience."
+              required
+            ></textarea>
+            <span class="form-error-msg">Required.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              TEDx / Public Speaking Experience
+            </label>
+            <textarea
+              name="tedx_experience"
+              class="form-textarea"
+              placeholder="Tell us about any TEDx, public speaking, event curation, speaker preparation, or related experience."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Why do you want to become a TEDx Licensed Coach? <span style="color:var(--red);">*</span>
+            </label>
+            <textarea
+              name="motivation"
+              class="form-textarea"
+              placeholder="Tell us why you are interested in becoming a coach and what you would bring to the role."
+              required
+            ></textarea>
+            <span class="form-error-msg">Required.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Areas You Can Coach
+            </label>
+            <textarea
+              name="coaching_areas"
+              class="form-textarea"
+              placeholder="For example: idea development, storytelling, presentation skills, speaker confidence, slide preparation, interview preparation."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Languages Spoken
+            </label>
+            <input
+              type="text"
+              name="languages"
+              class="form-input"
+              placeholder="For example: English, French"
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Availability
+            </label>
+            <select name="availability" class="form-select">
+              <option value="">Select availability</option>
+              <option>Weekdays</option>
+              <option>Weekends</option>
+              <option>Both Weekdays and Weekends</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              LinkedIn / Professional Profile
+            </label>
+            <input
+              type="url"
+              name="profile"
+              class="form-input"
+              placeholder="https://..."
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Additional Information
+            </label>
+            <textarea
+              name="message"
+              class="form-textarea"
+              style="min-height:110px;"
+              placeholder="Anything else you would like the team to know?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="align-self:flex-start;">
+            Submit Coach Application
+          </button>
+
+        </div>
+
+        <div class="form-success" style="margin-top:20px;">
+          Your coach application has been received. Our team will review your application and contact you regarding the next steps.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
       <!-- TAB: MEDIA -->
       <div class="tab-panel" data-tab-panel="media">
