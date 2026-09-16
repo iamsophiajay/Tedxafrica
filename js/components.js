@@ -22,8 +22,8 @@
       <a href="contact.html" class="nav__link">Contact</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
-      <a href="contact.html#partner" class="nav__cta--outline">Partner With Us</a>
-      <a href="contact.html#attend" class="nav__cta">Attend 2026</a>
+      <a href="https://chat.whatsapp.com/DbiaqJ25cKS3Krirdg1H8L?s=cl&p=a&mlu=4&ilr=4" class="nav__cta--outline">2027 Waitlist</a>
+      <a href="https://selar.com/projecttedxafrica2026tickets" class="nav__cta">Attend 2026</a>
     </div>
     <button class="nav__hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
