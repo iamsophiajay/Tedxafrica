@@ -77,16 +77,12 @@
       <div>
         <div class="footer__col-title">Contact</div>
         <div class="footer__contact-item">
-          <strong>General</strong>
+          <strong>General and Partnerships</strong>
           admin@projecttedxafrica.org
         </div>
         <div class="footer__contact-item">
           <strong>Speakers</strong>
           speakers@projecttedxafrica.org
-        </div>
-        <div class="footer__contact-item">
-          <strong>Partnerships</strong>
-          partnerships@projecttedxafrica.org
         </div>
       </div>
     </div>
