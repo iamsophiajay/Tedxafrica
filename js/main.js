@@ -88,78 +88,98 @@
     reveals.forEach(el => el.classList.add('visible'));
   }
 
-  /* ─── FORM HANDLING ─────────────────────────────────────── */
-  document.querySelectorAll('.contact-form').forEach(form => {
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+ /* ─── FORM HANDLING ─────────────────────────────────────── */
+document.querySelectorAll('.contact-form').forEach(form => {
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-      const btn = form.querySelector('[type="submit"]');
-      const successEl = form.querySelector('.form-success');
-      const originalBtnText = btn ? btn.textContent : 'Submit';
+    const btn = form.querySelector('[type="submit"]');
+    const successEl = form.querySelector('.form-success');
+    const originalBtnText = btn ? btn.textContent : 'Submit';
 
-      // Basic validation
-      let valid = true;
-      form.querySelectorAll('[required]').forEach(field => {
-        const errorEl = field.parentElement.querySelector('.form-error-msg');
-        if (!field.value.trim()) {
-          valid = false;
-          field.style.borderColor = 'var(--red)';
-          if (errorEl) errorEl.style.display = 'block';
-        } else {
-          field.style.borderColor = '';
-          if (errorEl) errorEl.style.display = 'none';
-        }
-      });
+    // Basic validation
+    let valid = true;
 
-      if (!valid) return;
+    form.querySelectorAll('[required]').forEach(field => {
+      const errorEl = field.parentElement.querySelector('.form-error-msg');
 
-      // Email validation
-      const emailField = form.querySelector('[type="email"]');
-      if (emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-        emailField.style.borderColor = 'var(--red)';
-        const errorEl = emailField.parentElement.querySelector('.form-error-msg');
-        if (errorEl) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; }
-        return;
-      }
-
-      // Loading state
-      if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
-
-      const formData = Object.fromEntries(new FormData(form));
-      const endpoint = form.dataset.endpoint || '/api/contact';
-
-      try {
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          if (successEl) successEl.style.display = 'block';
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (err) {
-        // Fallback: show success anyway for demo (remove in production)
-        form.style.display = 'none';
-        if (successEl) successEl.style.display = 'block';
-      } finally {
-        if (btn) { btn.textContent = originalBtnText; btn.disabled = false; }
-      }
-    });
-
-    // Clear field errors on input
-    form.querySelectorAll('input, textarea, select').forEach(field => {
-      field.addEventListener('input', () => {
+      if (!field.value.trim()) {
+        valid = false;
+        field.style.borderColor = 'var(--red)';
+        if (errorEl) errorEl.style.display = 'block';
+      } else {
         field.style.borderColor = '';
-        const errorEl = field.parentElement.querySelector('.form-error-msg');
         if (errorEl) errorEl.style.display = 'none';
-      });
+      }
     });
+
+    if (!valid) return;
+
+    // Email validation
+    const emailField = form.querySelector('[type="email"]');
+
+    if (emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+      emailField.style.borderColor = 'var(--red)';
+
+      const errorEl = emailField.parentElement.querySelector('.form-error-msg');
+
+      if (errorEl) {
+        errorEl.textContent = 'Please enter a valid email address.';
+        errorEl.style.display = 'block';
+      }
+
+      return;
+    }
+
+    // Loading state
+    if (btn) {
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+
+        if (successEl) {
+          successEl.style.display = 'block';
+        }
+      } else {
+        throw new Error('Form submission failed');
+      }
+
+    } catch (error) {
+      alert('There was a problem submitting the form. Please try again.');
+
+      if (btn) {
+        btn.textContent = originalBtnText;
+        btn.disabled = false;
+      }
+    }
   });
 
+  // Clear field errors on input
+  form.querySelectorAll('input, textarea, select').forEach(field => {
+    field.addEventListener('input', () => {
+      field.style.borderColor = '';
+
+      const errorEl = field.parentElement.querySelector('.form-error-msg');
+
+      if (errorEl) {
+        errorEl.style.display = 'none';
+      }
+    });
+  });
+});
+   
   /* ─── MARQUEE DUPLICATE ─────────────────────────────────── */
   document.querySelectorAll('.marquee-track').forEach(track => {
     const clone = track.innerHTML;
